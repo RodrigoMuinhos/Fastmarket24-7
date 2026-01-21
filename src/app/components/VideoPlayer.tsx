@@ -43,18 +43,18 @@ export function VideoPlayer() {
             whileTap={{ scale: 0.9 }}
             className="absolute inset-0 flex items-center justify-center"
           >
-            <div className="bg-[#22C55E] w-24 h-24 rounded-full flex items-center justify-center shadow-2xl shadow-[#22C55E]/50 group-hover:shadow-[#22C55E]/70 transition-all">
-              <Play className="text-white ml-1" size={40} fill="white" />
+            <div className="bg-[#22C55E] w-16 h-16 sm:w-24 sm:h-24 rounded-full flex items-center justify-center shadow-2xl shadow-[#22C55E]/50 group-hover:shadow-[#22C55E]/70 transition-all">
+              <Play className="text-white ml-1" size={32} fill="white" />
             </div>
           </motion.div>
 
           {/* Label */}
-          <div className="absolute bottom-6 left-6 right-6">
-            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4">
-              <p className="text-lg font-bold text-[#1F2937] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+          <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
+            <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-3 sm:p-4">
+              <p className="text-base sm:text-lg font-bold text-[#1F2937] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
                 🎥 Veja o FastMarket em ação
               </p>
-              <p className="text-sm text-gray-600" style={{ fontFamily: 'Inter, sans-serif' }}>
+              <p className="text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Demonstração completa de 2 minutos
               </p>
             </div>
@@ -69,7 +69,7 @@ export function VideoPlayer() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-sm flex items-center justify-center p-6"
+            className="fixed inset-0 z-100 bg-black/95 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
             onClick={handleClose}
           >
             <motion.div
@@ -85,7 +85,7 @@ export function VideoPlayer() {
                 whileHover={{ scale: 1.1, rotate: 90 }}
                 whileTap={{ scale: 0.9 }}
                 onClick={handleClose}
-                className="absolute -top-12 right-0 bg-white/10 backdrop-blur-sm text-white w-12 h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
+                className="absolute top-2 right-2 sm:-top-12 sm:right-0 bg-white/10 backdrop-blur-sm text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center hover:bg-white/20 transition-all"
               >
                 <X size={24} />
               </motion.button>
@@ -104,7 +104,7 @@ export function VideoPlayer() {
                   <motion.div
                     animate={{ opacity: [0.3, 0.5, 0.3] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/60"
+                    className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-black/60"
                   />
 
                   {/* Simulated Video Text */}
@@ -114,19 +114,19 @@ export function VideoPlayer() {
                         animate={{ scale: [1, 1.1, 1] }}
                         transition={{ duration: 2, repeat: Infinity }}
                       >
-                        <Play className="mx-auto mb-4" size={64} fill="white" />
+                        <Play className="mx-auto mb-4" size={56} fill="white" />
                       </motion.div>
-                      <p className="text-2xl font-bold mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      <p className="text-xl sm:text-2xl font-bold mb-2" style={{ fontFamily: 'Inter, sans-serif' }}>
                         Demonstração FastMarket
                       </p>
-                      <p className="text-lg text-gray-300" style={{ fontFamily: 'Inter, sans-serif' }}>
+                      <p className="text-sm sm:text-lg text-gray-300" style={{ fontFamily: 'Inter, sans-serif' }}>
                         Veja como funciona na prática
                       </p>
                     </div>
                   </div>
 
                   {/* Video Controls (simulated) */}
-                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                  <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-3 sm:p-6">
                     <div className="flex items-center gap-4">
                       <button className="text-white hover:text-[#22C55E] transition-colors">
                         <Play size={24} fill="white" />
@@ -144,7 +144,7 @@ export function VideoPlayer() {
                         />
                       </div>
 
-                      <span className="text-white text-sm font-mono">0:00 / 2:00</span>
+                      <span className="hidden sm:inline text-white text-sm font-mono">0:00 / 2:00</span>
                     </div>
                   </div>
                 </div>

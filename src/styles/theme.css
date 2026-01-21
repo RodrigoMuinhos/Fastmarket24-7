@@ -124,8 +124,14 @@
     @apply border-border outline-ring/50;
   }
 
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
   body {
     @apply bg-background text-foreground;
+    -webkit-text-size-adjust: 100%;
   }
 
   /**

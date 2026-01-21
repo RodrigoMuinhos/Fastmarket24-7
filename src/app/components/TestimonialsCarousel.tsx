@@ -89,13 +89,13 @@ export function TestimonialsCarousel() {
         whileInView={{ scale: 1, rotate: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-[#22C55E] w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-[#22C55E]/30 z-10"
+        className="absolute -top-6 sm:-top-8 left-1/2 transform -translate-x-1/2 bg-[#22C55E] w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center shadow-lg shadow-[#22C55E]/30 z-10"
       >
-        <Quote className="text-white" size={32} />
+        <Quote className="text-white" size={28} />
       </motion.div>
 
       {/* Testimonial Card */}
-      <div className="relative bg-white rounded-3xl shadow-2xl p-12 min-h-[320px] overflow-hidden">
+      <div className="relative bg-white rounded-3xl shadow-2xl p-6 sm:p-10 lg:p-12 min-h-[300px] sm:min-h-[320px] overflow-hidden">
         <AnimatePresence initial={false} custom={direction}>
           <motion.div
             key={currentIndex}
@@ -108,7 +108,7 @@ export function TestimonialsCarousel() {
               x: { type: 'spring', stiffness: 300, damping: 30 },
               opacity: { duration: 0.2 }
             }}
-            className="absolute inset-12"
+            className="absolute inset-6 sm:inset-10 lg:inset-12"
           >
             {/* Stars */}
             <div className="flex gap-1 mb-6">
@@ -125,16 +125,16 @@ export function TestimonialsCarousel() {
             </div>
 
             {/* Text */}
-            <p className="text-xl text-gray-700 mb-8 leading-relaxed italic" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 mb-6 sm:mb-8 leading-relaxed italic" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
               "{testimonials[currentIndex].text}"
             </p>
 
             {/* Author */}
-            <div className="border-t border-gray-100 pt-6">
-              <p className="text-lg font-bold text-[#1F2937] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <div className="border-t border-gray-100 pt-5 sm:pt-6">
+              <p className="text-base sm:text-lg font-bold text-[#1F2937] mb-1" style={{ fontFamily: 'Inter, sans-serif' }}>
                 {testimonials[currentIndex].name}
               </p>
-              <p className="text-sm text-gray-600" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
+              <p className="text-xs sm:text-sm text-gray-600" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 500 }}>
                 {testimonials[currentIndex].role} • {testimonials[currentIndex].company}
               </p>
             </div>
@@ -144,13 +144,13 @@ export function TestimonialsCarousel() {
         {/* Navigation Arrows */}
         <button
           onClick={() => paginate(-1)}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white shadow-lg w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#22C55E] hover:text-white transition-all group"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white shadow-lg w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center hover:bg-[#22C55E] hover:text-white transition-all group"
         >
           <ChevronLeft className="group-hover:scale-125 transition-transform" size={24} />
         </button>
         <button
           onClick={() => paginate(1)}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white shadow-lg w-12 h-12 rounded-full flex items-center justify-center hover:bg-[#22C55E] hover:text-white transition-all group"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white shadow-lg w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center hover:bg-[#22C55E] hover:text-white transition-all group"
         >
           <ChevronRight className="group-hover:scale-125 transition-transform" size={24} />
         </button>

@@ -216,7 +216,7 @@ export default function App() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="grid grid-cols-3 gap-4 sm:gap-8 md:gap-12 max-w-3xl mx-auto px-4"
+              className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 md:gap-12 max-w-3xl mx-auto px-4"
             >
               <motion.div 
                 whileHover={{ scale: 1.1, y: -10 }}
@@ -658,16 +658,16 @@ export default function App() {
       </section>
 
       {/* Our Strategy - Bento Grid */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-20"
           >
-            <h2 className="text-5xl md:text-6xl mb-6 text-[#1F2937]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-[#1F2937] leading-tight px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
               Nossa estratégia vai <span className="text-[#22C55E]">além da tecnologia</span>
             </h2>
           </motion.div>
@@ -689,7 +689,7 @@ export default function App() {
                 key={idx}
                 variants={fadeInUp}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-br from-white to-[#22C55E]/5 p-8 rounded-3xl border-2 border-gray-100 hover:border-[#22C55E] transition-all cursor-pointer group relative overflow-hidden"
+                className="bg-gradient-to-br from-white to-[#22C55E]/5 p-6 sm:p-8 rounded-3xl border-2 border-gray-100 hover:border-[#22C55E] transition-all cursor-pointer group relative overflow-hidden"
               >
                 <motion.div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity"
@@ -882,16 +882,16 @@ export default function App() {
       </section>
 
       {/* For Whom - Icon Grid */}
-      <section className="py-32 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 sm:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial="initial"
             whileInView="animate"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            className="text-center mb-20"
+            className="text-center mb-12 sm:mb-20"
           >
-            <h2 className="text-5xl md:text-6xl mb-6 text-[#1F2937]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-[#1F2937] leading-tight px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
               Para quem o FastMarket é <span className="text-[#22C55E]">ideal</span>
             </h2>
           </motion.div>
@@ -901,7 +901,7 @@ export default function App() {
             whileInView="animate"
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerChildren}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 max-w-6xl mx-auto"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto"
           >
             {[
               { icon: Building2, text: 'Condomínios' },
@@ -919,10 +919,10 @@ export default function App() {
                 <motion.div 
                   whileHover={{ rotate: [0, -5, 5, -5, 0] }}
                   transition={{ duration: 0.5 }}
-                  className="w-28 h-28 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#22C55E] transition-all shadow-lg group-hover:shadow-2xl"
+                  className="w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28 rounded-3xl flex items-center justify-center mx-auto mb-4 group-hover:bg-[#22C55E] transition-all shadow-lg group-hover:shadow-2xl"
                   style={{ background: 'linear-gradient(to bottom right, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05))' }}
                 >
-                  <target.icon className="text-[#1F2937] group-hover:text-white transition-colors" size={44} />
+                  <target.icon className="text-[#1F2937] group-hover:text-white transition-colors w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11" />
                 </motion.div>
                 <p className="text-[#1F2937] group-hover:text-[#22C55E] transition-colors font-medium" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}>
                   {target.text}
@@ -1010,7 +1010,7 @@ export default function App() {
           />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div 
             initial="initial"
             whileInView="animate"
@@ -1031,17 +1031,17 @@ export default function App() {
               </span>
             </motion.div>
 
-            <h2 className="text-5xl md:text-7xl mb-8 text-white leading-tight" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-8 text-white leading-tight px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
               Faça parte do <span className="text-[#22C55E]">futuro do varejo</span>
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
+            <p className="text-base sm:text-xl md:text-2xl text-gray-300 mb-10 sm:mb-12 leading-relaxed px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
               Leve o FastMarket para seu espaço com um projeto <span className="text-[#22C55E] font-semibold">sob medida</span>, inteligente e rentável.
             </p>
 
             <motion.button 
               whileHover={{ scale: 1.1, boxShadow: "0 30px 60px rgba(34, 197, 94, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#22C55E] text-white px-12 py-6 rounded-full text-xl transition-all shadow-2xl shadow-[#22C55E]/40" 
+              className="w-full sm:w-auto bg-[#22C55E] text-white px-8 sm:px-12 py-4 sm:py-6 rounded-full text-base sm:text-xl transition-all shadow-2xl shadow-[#22C55E]/40" 
               style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}
               onClick={openModal}
             >
@@ -1074,8 +1074,8 @@ export default function App() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-32 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 sm:py-32 bg-gradient-to-b from-gray-50 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -1095,10 +1095,10 @@ export default function App() {
               </div>
             </motion.div>
             
-            <h2 className="text-5xl md:text-6xl mb-6 text-[#1F2937]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-[#1F2937] leading-tight px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
               O que nossos <span className="text-[#22C55E]">parceiros dizem</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
               Centenas de clientes satisfeitos em todo Brasil
             </p>
           </motion.div>
@@ -1186,8 +1186,8 @@ export default function App() {
       <ParallaxSection />
 
       {/* FAQ Section */}
-      <section className="py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-20 sm:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial="initial"
             whileInView="animate"
@@ -1207,10 +1207,10 @@ export default function App() {
               </div>
             </motion.div>
             
-            <h2 className="text-5xl md:text-6xl mb-6 text-[#1F2937]" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-[#1F2937] leading-tight px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 700 }}>
               Tire suas <span className="text-[#22C55E]">dúvidas</span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
+            <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto px-4" style={{ fontFamily: 'Inter, sans-serif', fontWeight: 400 }}>
               Respostas para as perguntas mais comuns sobre o FastMarket
             </p>
           </motion.div>

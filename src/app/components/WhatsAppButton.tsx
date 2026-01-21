@@ -16,7 +16,7 @@ export function WhatsAppButton() {
       transition={{ delay: 1, duration: 0.5, type: 'spring' }}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center cursor-pointer group"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 bg-[#25D366] text-white w-14 h-14 sm:w-16 sm:h-16 rounded-full shadow-2xl flex items-center justify-center cursor-pointer group"
     >
       {/* Pulse Animation */}
       <motion.div
@@ -39,7 +39,7 @@ export function WhatsAppButton() {
       <motion.div
         initial={{ opacity: 0, x: 20 }}
         whileHover={{ opacity: 1, x: 0 }}
-        className="absolute right-20 bg-[#1F2937] text-white px-4 py-2 rounded-lg whitespace-nowrap text-sm font-semibold shadow-lg pointer-events-none"
+        className="hidden sm:block absolute right-20 bg-[#1F2937] text-white px-4 py-2 rounded-lg whitespace-nowrap text-sm font-semibold shadow-lg pointer-events-none"
       >
         Fale conosco no WhatsApp
         <div className="absolute right-[-6px] top-1/2 -translate-y-1/2 w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[6px] border-l-[#1F2937]" />
