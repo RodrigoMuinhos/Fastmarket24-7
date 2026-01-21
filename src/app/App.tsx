@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'motion/react';
+import { Link, Navigate, Route, Routes } from 'react-router-dom';
 import { Check, ShoppingCart, CreditCard, Package, TrendingUp, Building2, Users, Home, Hospital, Briefcase, Sparkles, Zap, BarChart3, Clock, Instagram, Mail, Phone, Monitor, Smartphone, Tv, X } from 'lucide-react';
 import logoFastMarket from '@/assets/cd53d06e3e768b5e2fb1c878a0f946e1d3655847.png';
 import fastMarketStore from '@/assets/4e4ffbb8fbf98e9dc91f47a200a552c791755bae.png';
 import fastMarketKiosks from '@/assets/aea5dc839fdf3fe488d0fe100d5373e95f46229e.png';
 import fastMarketContainer from '@/assets/4f8cd4a94f0a0df8de10cc4abb7edcf87facc8fe.png';
+import { FinancialPage } from '@/app/pages/FinancialPage';
 import { LeadCaptureModal } from '@/app/components/LeadCaptureModal';
 import { ScrollProgressBar } from '@/app/components/ScrollProgressBar';
 import { AnimatedCounter } from '@/app/components/AnimatedCounter';
@@ -15,7 +17,7 @@ import { VideoPlayer } from '@/app/components/VideoPlayer';
 import { ParallaxSection } from '@/app/components/ParallaxSection';
 import { RevealOnScroll } from '@/app/components/RevealOnScroll';
 
-export default function App() {
+export function LandingPage() {
   const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL ?? 'https://www.instagram.com/fastmarket.io/';
   const contactEmail = import.meta.env.VITE_CONTACT_EMAIL ?? 'contato@fastmarket.io';
   const contactPhoneE164 = import.meta.env.VITE_CONTACT_PHONE_E164 ?? '+5511999999999';
@@ -86,15 +88,24 @@ export default function App() {
               Fast<span style={{ fontWeight: 500 }}>Market</span>
             </div>
           </motion.div>
-          <motion.button 
-            whileHover={{ scale: 1.05, backgroundColor: '#1ea952' }}
-            whileTap={{ scale: 0.95 }}
-            className="bg-[#22C55E] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap"
-            style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
-            onClick={openModal}
-          >
-            Falar com time
-          </motion.button>
+          <div className="flex items-center gap-2 sm:gap-3">
+            <Link
+              to="/financeiro"
+              className="border border-gray-200 bg-white text-[#1F2937] px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap hover:border-[#22C55E] hover:text-[#22C55E]"
+              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
+            >
+              Simular retorno
+            </Link>
+            <motion.button 
+              whileHover={{ scale: 1.05, backgroundColor: '#1ea952' }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#22C55E] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all whitespace-nowrap"
+              style={{ fontFamily: 'Inter, sans-serif', fontWeight: 600 }}
+              onClick={openModal}
+            >
+              Falar com time
+            </motion.button>
+          </div>
         </div>
       </motion.header>
 
@@ -1558,5 +1569,15 @@ export default function App() {
         )}
       </AnimatePresence>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/financeiro" element={<FinancialPage />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
