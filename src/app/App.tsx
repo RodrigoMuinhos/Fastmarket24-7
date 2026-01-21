@@ -16,6 +16,10 @@ import { ParallaxSection } from '@/app/components/ParallaxSection';
 import { RevealOnScroll } from '@/app/components/RevealOnScroll';
 
 export default function App() {
+  const instagramUrl = import.meta.env.VITE_INSTAGRAM_URL ?? 'https://www.instagram.com/fastmarket.io/';
+  const contactEmail = import.meta.env.VITE_CONTACT_EMAIL ?? 'contato@fastmarket.io';
+  const contactPhoneE164 = import.meta.env.VITE_CONTACT_PHONE_E164 ?? '+5511999999999';
+
   const [isVisible, setIsVisible] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStore, setSelectedStore] = useState<number | null>(null);
@@ -1277,7 +1281,7 @@ export default function App() {
               className="flex justify-center gap-4"
             >
               <motion.a
-                href="https://www.instagram.com/fastmarket.io/"
+                href={instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.15, backgroundColor: '#22C55E' }}
@@ -1288,7 +1292,7 @@ export default function App() {
               </motion.a>
 
               <motion.a
-                href="mailto:contato@fastmarket.io"
+                href={`mailto:${contactEmail}`}
                 whileHover={{ scale: 1.15, backgroundColor: '#22C55E' }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/10 backdrop-blur-sm w-14 h-14 rounded-2xl flex items-center justify-center transition-all hover:shadow-lg hover:shadow-[#22C55E]/30 group"
@@ -1297,7 +1301,7 @@ export default function App() {
               </motion.a>
 
               <motion.a
-                href="tel:+5511999999999"
+                href={`tel:${contactPhoneE164}`}
                 whileHover={{ scale: 1.15, backgroundColor: '#22C55E' }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white/10 backdrop-blur-sm w-14 h-14 rounded-2xl flex items-center justify-center transition-all hover:shadow-lg hover:shadow-[#22C55E]/30 group"

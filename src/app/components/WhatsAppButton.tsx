@@ -2,8 +2,10 @@ import { motion } from 'motion/react';
 import { MessageCircle } from 'lucide-react';
 
 export function WhatsAppButton() {
-  const phoneNumber = '5511999999999'; // Substitua pelo número real do FastMarket
-  const message = 'Olá! Gostaria de saber mais sobre o FastMarket.';
+  // Configure these in Vercel (Project Settings → Environment Variables)
+  // VITE_WHATSAPP_PHONE should be digits only, e.g. 5511999999999
+  const phoneNumber = import.meta.env.VITE_WHATSAPP_PHONE ?? '5511999999999';
+  const message = import.meta.env.VITE_WHATSAPP_MESSAGE ?? 'Olá! Gostaria de saber mais sobre o FastMarket.';
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (
